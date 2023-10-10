@@ -1,4 +1,4 @@
-//importacion de modulo para realizar operaciones de escritura y lectura de archivos
+//importacion de modulo para realizar operaciones de escritura y lectura de archivos (file system)
 const fs = require('fs').promises
 
 //Declaración de la clase
@@ -115,4 +115,6 @@ class ProductManager {
     }
     
     //instancia de la clase ProductManager con la ruta donde se almacenaran los productos
-    const productManager = new ProductManager('./servicios.json');
+    const productManager = new ProductManager('./almacen.json');
+
+    //  Testing de Entregable 2
