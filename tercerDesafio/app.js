@@ -1,15 +1,15 @@
 const express = require('express');
 const ProductManager = require('./ProductManager');
 
-const app = express();
-const port = 3000; // Puerto en el que se ejecutará el servidor
+const server = express();
+const port = 8080; // Puerto en el que se ejecutará el servidor
 
 const productManager = new ProductManager('./almacen.json');
 
-app.use(express.json());
+server.use(express.json());
 
 // Endpoint para obtener todos los productos o un número limitado de productos
-app.get('/products', async (req, res) => {
+server.get('/products', async (req, res) => {
   try {
     const limit = parseInt(req.query.limit); // Obtener el límite de resultados del query param
     const products = await productManager.getProducts();
@@ -27,7 +27,7 @@ app.get('/products', async (req, res) => {
 });
 
 // Endpoint para obtener un producto específico por ID
-app.get('/products/:pid', async (req, res) => {
+server.get('/products/:pid', async (req, res) => {
   try {
     const productId = parseInt(req.params.pid);
     if (!isNaN(productId)) {
@@ -41,6 +41,6 @@ app.get('/products/:pid', async (req, res) => {
   }
 });
 
-app.listen(port, () => {
+server.listen(port, () => {
   console.log(`Servidor Express en funcionamiento en el puerto ${port}`);
 });

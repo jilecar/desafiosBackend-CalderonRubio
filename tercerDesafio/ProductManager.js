@@ -112,7 +112,7 @@ class ProductManager {
             await this.saveProducts();
         }
     }
-}
+} module.exports=ProductManager;
 
 //instancia de la clase ProductManager con la ruta donde se almacenaran los productos
 const productManager = new ProductManager('./almacen.json');
