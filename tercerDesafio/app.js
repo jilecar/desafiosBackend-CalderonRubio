@@ -4,14 +4,14 @@ const ProductManager = require('./ProductManager');
 const app = express();
 const port = 3000; // Puerto en el que se ejecutará el servidor
 
-const productManager = new ProductManager('./servicios.json');
+const productManager = new ProductManager('./almacen.json');
 
 app.use(express.json());
 
 // Endpoint para obtener todos los productos o un número limitado de productos
 app.get('/products', async (req, res) => {
   try {
-    const limit = parseInt(req.query.limit); // Obtén el límite de resultados del query param
+    const limit = parseInt(req.query.limit); // Obtener el límite de resultados del query param
     const products = await productManager.getProducts();
     
     // Si se proporciona un límite, devuelve solo la cantidad especificada de productos
