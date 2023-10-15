@@ -1,7 +1,7 @@
 const express = require('express');
 const ProductManager = require('./ProductManager');
 
-const server = express();
+const server = express(); //instancia de express
 const port = 8080; // Puerto en el que se ejecutará el servidor
 
 const productManager = new ProductManager('./almacen.json');
@@ -41,6 +41,7 @@ server.get('/products/:pid', async (req, res) => {
   }
 });
 
+//iniciar el servidor en el puerto 8080
 server.listen(port, () => {
   console.log(`Servidor Express en funcionamiento en el puerto ${port}`);
 });
