@@ -112,32 +112,7 @@ class ProductManager {
             await this.saveProducts();
         }
     }
-} module.exports=ProductManager;
+} module.exports = ProductManager;
 
 //instancia de la clase ProductManager con la ruta donde se almacenaran los productos
 const productManager = new ProductManager('./almacen.json');
-
-//  Testing de Entregable 2
-
-productManager.addProduct("Producto prueba", "Este es un producto de prueba", 200, "sin imagen", "abc123", 25);
-
-try {
-    const product = productManager.getProductsById(1);
-    console.log("Producto encontrado:", product);
-} catch (error) {
-    console.error(error.message);
-}
-
-try {
-    productManager.updateProduct(1);
-    console.log("Producto actualizado con éxito");
-} catch (error) {
-    console.error(error.message);
-}
-
-try {
-    productManager.deleteProduct(1);
-    console.log("Producto eliminado con éxito");
-} catch (error) {
-    console.error(error.message);
-}
