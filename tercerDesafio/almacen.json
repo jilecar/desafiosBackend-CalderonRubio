@@ -106,5 +106,14 @@
 		"thumbnail": "sin imagen",
 		"code": "abc12",
 		"stock": 18
+	},
+	{
+		"id": 13,
+		"title": "Escaner",
+		"description": "Escaner HP S0005",
+		"price": 1500000,
+		"thumbnail": "sin imagen",
+		"code": "abc13",
+		"stock": 14
 	}
 ]
